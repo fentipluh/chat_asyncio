@@ -1,6 +1,8 @@
 import asyncio
+import logging
 import sys
 import os
+
 class ChatClient:
     def __init__(self, server_address, server_port):
         self.server_address = server_address
@@ -9,29 +11,50 @@ class ChatClient:
         self.writer = None
 
     async def connect(self):
-        self.reader, self.writer = await asyncio.open_connection(self.server_address, self.server_port)
-        print(f'Присоединение к {self.server_address}:{self.server_port}')
+        try:
+            self.reader, self.writer = await asyncio.open_connection(self.server_address, self.server_port)
+            print(f'Присоединение к {self.server_address}:{self.server_port}')
+        except ConnectionRefusedError:
+            logging.error(f"Ошибка подключения: сервер {self.server_address}:{self.server_port} недоступен")
+            sys.exit(1)
+        except OSError as e:
+            logging.error(f"Ошибка подключения: {e}")
+            sys.exit(1)
 
     async def read_messages(self):
-        while True:
-            result_bytes = await self.reader.readline()
-            response = result_bytes.decode()
-            print(response.strip())
+        try:
+            while True:
+                result_bytes = await self.reader.readline()
+                response = result_bytes.decode()
+                print(response.strip())
+        except asyncio.CancelledError:
+            logging.info("Чтение сообщений отменено")
+        except Exception as e:
+            logging.error(f"Ошибка при чтении сообщений: {e}")
 
     async def write_messages(self):
-        while True:
-            message = await asyncio.to_thread(sys.stdin.readline)
-            message_bytes = message.encode()
-            self.writer.write(message_bytes)
-            await self.writer.drain()
-            if message.strip() == 'quit':
-                break
-        print('Выход с сервера...')
+        try:
+            while True:
+                message = await asyncio.to_thread(sys.stdin.readline)
+                message_bytes = message.encode()
+                self.writer.write(message_bytes)
+                await self.writer.drain()
+                if message.strip() == 'quit':
+                    break
+        except asyncio.CancelledError:
+            logging.info("Отправка сообщений отменена")
+        except Exception as e:
+            logging.error(f"Ошибка при отправке сообщений: {e}")
+        finally:
+            print('Выход с сервера...')
 
     async def disconnect(self):
-        print('Отключение от сервера')
-        self.writer.close()
-        await self.writer.wait_closed()
+        try:
+            print('Отключение от сервера')
+            self.writer.close()
+            await self.writer.wait_closed()
+        except Exception as e:
+            logging.error(f"Ошибка при отключении: {e}")
 
     async def run(self):
         await self.connect()
@@ -48,4 +71,10 @@ async def main():
     client = ChatClient(server_address, server_port)
     await client.run()
 
-asyncio.run(main())
+try:
+    asyncio.run(main())
+except KeyboardInterrupt:
+    print("Клиент завершил работу!")
+except Exception as e:
+    logging.error(f"Непредвиденная ошибка: {e}")
+    print("Клиент завершил работу с ошибкой!")

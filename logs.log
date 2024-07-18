@@ -1,79 +1,46 @@
-2024-07-17 23:52:11,758 - INFO - {"event": "join", "login": "Данил"}
-2024-07-17 23:52:12,707 - INFO - {"event": "message", "text": "аыфв", "login": "Данил"}
-2024-07-17 23:52:12,872 - INFO - {"event": "message", "text": "аыф", "login": "Данил"}
-2024-07-17 23:52:13,021 - INFO - {"event": "message", "text": "а", "login": "Данил"}
-2024-07-17 23:52:13,172 - INFO - {"event": "message", "text": "ыфа", "login": "Данил"}
-2024-07-17 23:52:13,311 - INFO - {"event": "message", "text": "фы", "login": "Данил"}
-2024-07-17 23:52:13,461 - INFO - {"event": "message", "text": "аы", "login": "Данил"}
-2024-07-17 23:52:13,596 - INFO - {"event": "message", "text": "фа", "login": "Данил"}
-2024-07-17 23:52:13,741 - INFO - {"event": "message", "text": "ы", "login": "Данил"}
-2024-07-17 23:52:13,880 - INFO - {"event": "message", "text": "а", "login": "Данил"}
-2024-07-17 23:52:16,382 - INFO - {"event": "message", "text": "фы\u001a\u001a\u001a", "login": "Данил"}
-2024-07-17 23:52:21,960 - INFO - {"event": "message", "text": "quit", "login": "Данил"}
-2024-07-17 23:52:21,960 - INFO - {"event": "leave", "login": "Данил"}
-2024-07-17 23:52:26,859 - INFO - {"event": "join", "login": "Данил"}
-2024-07-17 23:52:28,642 - INFO - {"event": "message", "text": "Привет", "login": "Данил"}
-2024-07-17 23:52:31,618 - INFO - {"event": "message", "text": "Как дела?", "login": "Данил"}
-2024-07-17 23:52:49,774 - ERROR - Task exception was never retrieved
-future: <Task finished name='Task-2' coro=<ChatServer.broadcaster() done, defined at C:\Users\Fentipluh\PycharmProjects\w11_test\server.py:30> exception=ValueError('Set of Tasks/Futures is empty.')>
+2024-07-18 14:50:08,889 - INFO - {"event": "join", "login": "Данил"}
+2024-07-18 14:50:16,818 - INFO - {"event": "join", "login": "Яна"}
+2024-07-18 14:50:19,374 - INFO - {"event": "message", "text": "Хеллоу", "login": "Яна"}
+2024-07-18 14:50:20,977 - INFO - {"event": "message", "text": "Привет", "login": "Яна"}
+2024-07-18 14:50:25,660 - INFO - {"event": "message", "text": "Как дела?", "login": "Данил"}
+2024-07-18 14:50:30,728 - INFO - {"event": "message", "text": "Хорошо, ты как?", "login": "Данил"}
+2024-07-18 14:50:32,580 - INFO - {"event": "message", "text": "quit", "login": "Данил"}
+2024-07-18 14:50:32,580 - INFO - {"event": "leave", "login": "Данил"}
+2024-07-18 14:50:35,831 - INFO - {"event": "message", "text": "quit", "login": "Яна"}
+2024-07-18 14:50:35,831 - INFO - {"event": "leave", "login": "Яна"}
+2024-07-18 14:50:35,831 - ERROR - Error in broadcaster: Set of Tasks/Futures is empty.
+2024-07-18 14:50:52,458 - INFO - Сервер завершил работу
+2024-07-18 15:06:36,977 - ERROR - Error in handle_chat_client (outer): 'NoneType' object has no attribute 'error'
+2024-07-18 15:06:47,200 - ERROR - Error in handle_chat_client (outer): 'NoneType' object has no attribute 'error'
+2024-07-18 15:06:56,287 - INFO - Сервер завершил работу
+2024-07-18 15:08:05,418 - INFO - {"event": "join", "login": "f"}
+2024-07-18 15:08:07,304 - INFO - {"event": "message", "text": "sa", "login": "f"}
+2024-07-18 15:08:10,439 - ERROR - Error in handle_chat_client (outer): name 'logger' is not defined
+2024-07-18 15:08:50,464 - ERROR - Error in write_message: 
+2024-07-18 15:08:50,464 - INFO - Сервер завершил работу
+2024-07-18 15:08:50,471 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<ChatServer.handle_chat_client() done, defined at C:\Users\Fentipluh\PycharmProjects\w11_test\server.py:99> exception=KeyboardInterrupt()>
 Traceback (most recent call last):
-  File "C:\Users\Fentipluh\PycharmProjects\w11_test\server.py", line 36, in broadcaster
-    _ = await asyncio.wait(tasks)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 408, in wait
-    raise ValueError('Set of Tasks/Futures is empty.')
-ValueError: Set of Tasks/Futures is empty.
-2024-07-17 23:53:00,319 - INFO - {"event": "join", "login": "ВАА"}
-2024-07-17 23:53:01,298 - INFO - {"event": "message", "text": "и", "login": "ВАА"}
-2024-07-17 23:53:01,832 - INFO - {"event": "message", "text": "выф", "login": "ВАА"}
-2024-07-17 23:53:02,012 - INFO - {"event": "message", "text": "выф", "login": "ВАА"}
-2024-07-17 23:53:02,182 - INFO - {"event": "message", "text": "в", "login": "ВАА"}
-2024-07-17 23:53:02,357 - INFO - {"event": "message", "text": "ыфв", "login": "ВАА"}
-2024-07-17 23:53:02,871 - INFO - {"event": "message", "text": "фыс", "login": "ВАА"}
-2024-07-17 23:53:03,355 - INFO - {"event": "message", "text": "чя", "login": "ВАА"}
-2024-07-17 23:53:03,556 - INFO - {"event": "message", "text": "с", "login": "ВАА"}
-2024-07-17 23:53:03,805 - INFO - {"event": "message", "text": "фы", "login": "ВАА"}
-2024-07-17 23:53:10,900 - INFO - {"event": "message", "text": "выфвыф", "login": "ВАА"}
-2024-07-17 23:53:11,211 - INFO - {"event": "message", "text": "выф", "login": "ВАА"}
-2024-07-17 23:53:11,444 - INFO - {"event": "message", "text": "выф", "login": "ВАА"}
-2024-07-17 23:53:11,830 - INFO - {"event": "message", "text": "выфа", "login": "ВАА"}
-2024-07-17 23:53:12,289 - INFO - {"event": "message", "text": "авфыа", "login": "ВАА"}
-2024-07-17 23:53:12,963 - INFO - {"event": "message", "text": "фсчя", "login": "ВАА"}
-2024-07-17 23:53:15,055 - INFO - {"event": "message", "text": "ыфвв", "login": "ВАА"}
-2024-07-17 23:53:15,284 - INFO - {"event": "message", "text": "ыф", "login": "ВАА"}
-2024-07-17 23:53:16,034 - INFO - {"event": "message", "text": "вфы", "login": "ВАА"}
-2024-07-17 23:53:17,497 - INFO - {"event": "message", "text": "quit", "login": "ВАА"}
-2024-07-17 23:53:17,497 - INFO - {"event": "leave", "login": "ВАА"}
-2024-07-17 23:53:19,868 - ERROR - Task exception was never retrieved
-future: <Task finished name='Task-2' coro=<ChatServer.broadcaster() done, defined at C:\Users\Fentipluh\PycharmProjects\w11_test\server.py:30> exception=ValueError('Set of Tasks/Futures is empty.')>
-Traceback (most recent call last):
-  File "C:\Users\Fentipluh\PycharmProjects\w11_test\server.py", line 36, in broadcaster
-    _ = await asyncio.wait(tasks)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 408, in wait
-    raise ValueError('Set of Tasks/Futures is empty.')
-ValueError: Set of Tasks/Futures is empty.
-2024-07-18 00:08:16,933 - INFO - {"event": "join", "login": "Данил"}
-2024-07-18 00:08:18,186 - INFO - {"event": "message", "text": "Привет", "login": "Данил"}
-2024-07-18 00:08:20,154 - INFO - {"event": "message", "text": "как дела", "login": "Данил"}
-2024-07-18 00:08:22,310 - INFO - {"event": "message", "text": "афыдаыфа", "login": "Данил"}
-2024-07-18 00:08:22,924 - INFO - {"event": "message", "text": "фыадфыжэа", "login": "Данил"}
-2024-07-18 00:08:23,514 - INFO - {"event": "message", "text": "фыа", "login": "Данил"}
-2024-07-18 00:08:23,713 - INFO - {"event": "message", "text": "фва", "login": "Данил"}
-2024-07-18 00:08:23,869 - INFO - {"event": "message", "text": "фы", "login": "Данил"}
-2024-07-18 00:08:29,786 - INFO - {"event": "message", "text": "quit", "login": "Данил"}
-2024-07-18 00:08:29,787 - INFO - {"event": "leave", "login": "Данил"}
-2024-07-18 00:08:33,339 - ERROR - Task exception was never retrieved
-future: <Task finished name='Task-2' coro=<ChatServer.broadcaster() done, defined at C:\Users\Fentipluh\PycharmProjects\w11_test\server.py:28> exception=ValueError('Set of Tasks/Futures is empty.')>
-Traceback (most recent call last):
-  File "C:\Users\Fentipluh\PycharmProjects\w11_test\server.py", line 34, in broadcaster
-    _ = await asyncio.wait(tasks)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 408, in wait
-    raise ValueError('Set of Tasks/Futures is empty.')
-ValueError: Set of Tasks/Futures is empty.
-2024-07-18 00:08:56,652 - INFO - {"event": "join", "login": "Данил"}
-2024-07-18 00:09:00,696 - INFO - {"event": "join", "login": "Яна"}
-2024-07-18 00:09:02,628 - INFO - {"event": "message", "text": "ллжлж", "login": "Яна"}
-2024-07-18 00:09:04,781 - INFO - {"event": "message", "text": "аыфафыа", "login": "Данил"}
-2024-07-18 00:09:05,020 - INFO - {"event": "message", "text": "фыа", "login": "Данил"}
+  File "C:\Users\Fentipluh\PycharmProjects\w11_test\server.py", line 138, in <module>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Fentipluh\PycharmProjects\w11_test\server.py", line 106, in handle_chat_client
+    async def main():
+                      
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
