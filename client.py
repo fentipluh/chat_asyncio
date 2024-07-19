@@ -67,7 +67,7 @@ class ChatClient:
 
 async def main():
     server_address = os.getenv("HOST", '127.0.0.1')
-    server_port = os.getenv("PORT", 8888)
+    server_port = os.getenv("PORT", 5000)
     client = ChatClient(server_address, server_port)
     await client.run()
 

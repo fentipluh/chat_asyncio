@@ -15,7 +15,7 @@ def create_logger():
     logger.addHandler(file_handler)
 
 class ChatServer:
-    def __init__(self, host='127.0.0.1', port=8888):
+    def __init__(self, host=os.getenv('HOST'), port=os.getenv('PORT')):
         self.host = host
         self.port = port
         self.queue = asyncio.Queue()
@@ -30,6 +30,7 @@ class ChatServer:
             raise
         except Exception as e:
             logging.error(f"Unexpected error in write_message: {e}")
+
     async def broadcaster(self):
         while True:
             try:
@@ -105,11 +106,10 @@ class ChatServer:
 
 async def main():
     host_address = os.getenv("HOST", '127.0.0.1')
-    host_port = os.getenv("PORT", 8888)
+    host_port = os.getenv("PORT", 5000)
     create_logger()
     chat_server = ChatServer(host=host_address, port=host_port)
     await chat_server.run()
-
 
 try:
     asyncio.run(main())
